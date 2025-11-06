@@ -1,0 +1,17 @@
+[hooks]
+postinstall = "bun install"
+
+[env]
+_.path = ["{{config_root}}/node_modules/.bin"]
+
+[tasks.dev]
+description = "Start the development server"
+run = "./index.ts"
+
+[tasks.fmt]
+description = "Format the entire project"
+run = "prettier --write ."
+
+[tasks.typecheck]
+description = "Typecheck the entire project"
+run = "tsgo --noEmit"

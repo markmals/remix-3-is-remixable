@@ -1,0 +1,21 @@
+{
+    "name": "remix-3-is-remixable",
+    "type": "module",
+    "private": true,
+    "dependencies": {
+        "@lit/context": "^1.1.6",
+        "@remix-run/dom": "jam",
+        "@remix-run/events": "jam",
+        "lit": "^3.3.1",
+        "preact": "^10.27.2",
+        "signal-polyfill": "^0.2.2"
+    },
+    "devDependencies": {
+        "@prettier/plugin-oxc": "^0.0.4",
+        "@types/bun": "latest",
+        "@typescript/native-preview": "latest",
+        "prettier": "^3.6.2",
+        "prettier-plugin-pkg": "^0.21.2",
+        "prettier-plugin-toml": "^2.0.6"
+    }
+}
