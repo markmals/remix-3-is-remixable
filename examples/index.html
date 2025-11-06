@@ -54,14 +54,16 @@
                 font-weight: 400;
             }
 
-            .subtitle a {
+            .subtitle a,
+            .text-link {
                 color: #fff;
                 text-decoration: none;
                 border-bottom: 2px solid #ffd400;
                 transition: border-color 0.2s ease;
             }
 
-            .subtitle a:hover {
+            .subtitle a:hover,
+            .text-link:hover {
                 border-bottom-color: #64c146;
             }
 
@@ -74,42 +76,31 @@
 
             .example-card {
                 background: #2d2d2d;
-                border: 1px solid rgba(255, 255, 255, 0.1);
+                /* border: 1px solid rgba(255, 255, 255, 0.1); */
                 border-radius: 24px;
                 padding: 2rem;
-                text-decoration: none;
                 color: inherit;
-                transition: all 0.3s ease;
-                position: relative;
-                overflow: hidden;
             }
 
-            .example-card::before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(255, 255, 255, 0.05);
-                opacity: 0;
-                transition: opacity 0.3s ease;
+            .example-card__link {
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+                margin-bottom: 0.75rem;
+                color: inherit;
+                text-decoration: none;
+                border-bottom: 2px solid transparent;
             }
 
-            .example-card:hover {
-                transform: translateY(-5px);
-                border-color: rgba(255, 255, 255, 0.3);
-                box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1);
-            }
-
-            .example-card:hover::before {
-                opacity: 1;
+            .example-card__link:focus-visible {
+                border-bottom-color: #ffd400;
+                outline: none;
             }
 
             .example-card h2 {
-                position: relative;
                 font-size: 1.1rem;
-                margin: 0 0 0.5rem 0;
+                margin: 0;
                 font-weight: 600;
                 white-space: nowrap;
             }
@@ -120,7 +111,6 @@
             }
 
             .example-card p {
-                position: relative;
                 color: #999;
                 margin: 0;
                 font-size: 0.95rem;
@@ -128,9 +118,7 @@
             }
 
             .icon {
-                position: relative;
                 font-size: 2rem;
-                margin-bottom: 1rem;
             }
 
             @media (max-width: 768px) {
@@ -263,23 +251,53 @@
             </p>
 
             <div class="examples-grid">
-                <a href="/dom-signals" class="example-card">
-                    <div class="icon">⚡</div>
-                    <h2><code>@remix-run/dom</code> + Signals</h2>
-                    <p>Reactive DOM manipulation with signals for efficient state management</p>
-                </a>
+                <article class="example-card">
+                    <a class="example-card__link" href="/dom-signals">
+                        <div class="icon">🚦</div>
+                        <h2><code>@remix-run/dom</code> + Signals</h2>
+                    </a>
+                    <p>
+                        Automatic reactivity for Remix 3 using the
+                        <a
+                            class="text-link"
+                            href="https://github.com/proposal-signals/signal-polyfill"
+                            target="_blank"
+                            >TC-39 Signals polyfill</a
+                        >
+                    </p>
+                </article>
 
-                <a href="/events-lit" class="example-card">
-                    <div class="icon">🔥</div>
-                    <h2><code>@remix-run/events</code> + Lit</h2>
-                    <p>Event handling and web components using Lit framework</p>
-                </a>
+                <article class="example-card">
+                    <a class="example-card__link" href="/events-lit">
+                        <div class="icon">🔥</div>
+                        <h2><code>@remix-run/events</code> + Lit</h2>
+                    </a>
+                    <p>
+                        Integrating Remix 3 events with Lit using
+                        <a
+                            class="text-link"
+                            href="https://lit.dev/docs/templates/custom-directives"
+                            target="_blank"
+                            >directives</a
+                        >
+                    </p>
+                </article>
 
-                <a href="/style-preact" class="example-card">
-                    <div class="icon">🎨</div>
-                    <h2><code>@remix-run/style</code> + Preact</h2>
-                    <p>Component styling and theming using Preact library</p>
-                </a>
+                <article class="example-card">
+                    <a class="example-card__link" href="/style-preact">
+                        <div class="icon">⚛️</div>
+                        <h2><code>@remix-run/style</code> + Preact</h2>
+                    </a>
+                    <p>
+                        Bringing the Remix 3 <code>css</code> prop to Preact using
+                        <a
+                            class="text-link"
+                            href="https://preactjs.com/guide/v10/options"
+                            target="_blank"
+                            >option hooks</a
+                        >
+                    </p>
+                </article>
             </div>
         </div>
     </body>
