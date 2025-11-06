@@ -58,13 +58,15 @@
             .text-link {
                 color: #fff;
                 text-decoration: none;
-                border-bottom: 2px solid #ffd400;
+                border-bottom: 2px solid var(--link-underline, #ffd400);
                 transition: border-color 0.2s ease;
+                --link-underline: #1a72ff;
+                --link-underline-hover: #e561c3;
             }
 
             .subtitle a:hover,
             .text-link:hover {
-                border-bottom-color: #64c146;
+                border-bottom-color: var(--link-underline-hover, #64c146);
             }
 
             .examples-grid {
@@ -76,7 +78,6 @@
 
             .example-card {
                 background: #2d2d2d;
-                /* border: 1px solid rgba(255, 255, 255, 0.1); */
                 border-radius: 24px;
                 padding: 2rem;
                 color: inherit;
@@ -90,12 +91,19 @@
                 margin-bottom: 0.75rem;
                 color: inherit;
                 text-decoration: none;
-                border-bottom: 2px solid transparent;
+                border-bottom: 2px solid var(--link-underline, transparent);
+                transition: border-color 0.2s ease;
+                --link-underline: #64c146;
+                --link-underline-hover: #ffd400;
             }
 
             .example-card__link:focus-visible {
-                border-bottom-color: #ffd400;
+                border-bottom-color: var(--link-underline-hover, #ffd400);
                 outline: none;
+            }
+
+            .example-card__link:hover {
+                border-bottom-color: var(--link-underline-hover, transparent);
             }
 
             .example-card h2 {
@@ -244,6 +252,7 @@
                 Explore different examples showcasing
                 <a
                     href="https://remix.run/blog/remix-jam-2025-recap#introducing-remix-3-parts-1--2-by-michael-jackson-and-ryan-florence"
+                    target="_blank"
                 >
                     Remix 3</a
                 >
