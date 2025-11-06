@@ -12,12 +12,12 @@ export function Layout({ children }: { children: Remix.RemixNode }) {
                 display: "flex",
                 flexDirection: "column",
                 gap: "30px",
-                width: "min(420px, calc(100vw - 40px))",
+                width: "650px",
                 margin: "0 auto",
                 background: "#2D2D2D",
                 color: "white",
                 borderRadius: "36px",
-                padding: "30px 32px 36px 32px",
+                padding: "30px 32px 36px",
             }}
         >
             <header
@@ -103,6 +103,7 @@ export function ControlGroup({ children, css, ...rest }: Remix.Props<"div">) {
                 gap: "12px",
                 alignItems: "stretch",
                 justifyContent: "center",
+                height: "200px",
                 ...css,
             }}
         >
@@ -117,7 +118,7 @@ export function Button({ children, ...rest }: Remix.Props<"button">) {
             {...rest}
             css={{
                 all: "unset",
-                letterSpacing: 1.25,
+                letterSpacing: "1.25px",
                 height: "100%",
                 display: "flex",
                 alignItems: "flex-end",
@@ -230,8 +231,8 @@ export function Triangle({ label, orientation }: { label: string; orientation: "
             aria-label={label}
             viewBox="0 0 10 10"
             css={{
-                width: 18,
-                height: 18,
+                width: "18px",
+                height: "18px",
             }}
         >
             <polygon points={orientation === "up" ? up : down} fill="currentColor" />

@@ -77,7 +77,7 @@ function Equalizer(this: Remix.Handle) {
                     borderRadius: "12px",
                     padding: "12px",
                     width: "100%",
-                    height: "180px",
+                    height: "300px",
                     gap: "4px",
                 }}
             >
@@ -189,7 +189,7 @@ const TempoDisplay = component(function (this: Remix.Handle) {
                 >
                     <div
                         css={{
-                            fontSize: "0.75rem",
+                            fontSize: "0.8rem",
                             fontWeight: 700,
                             letterSpacing: "0.08em",
                         }}

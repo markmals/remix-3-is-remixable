@@ -10,14 +10,13 @@ export class Layout extends LitElement {
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-            width: 100%;
-            max-width: 360px;
+            gap: 30px;
+            width: 650px;
             margin: 0 auto;
             background: #2d2d2d;
             color: white;
-            border-radius: 28px;
-            padding: 24px 20px 28px 20px;
+            border-radius: 36px;
+            padding: 30px 32px 36px;
         }
         * {
             box-sizing: border-box;
@@ -26,14 +25,14 @@ export class Layout extends LitElement {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 12px;
+            gap: 1rem;
         }
         .title {
             display: flex;
             align-items: end;
             line-height: 0.88;
             text-align: right;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
             position: relative;
             top: 1px;
@@ -110,11 +109,12 @@ export class ControlGroup extends LitElement {
     static override styles = css`
         :host {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 80px 80px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-auto-rows: minmax(64px, auto);
             gap: 12px;
             align-items: stretch;
             justify-content: center;
+            height: 200px;
         }
     `;
 
@@ -136,11 +136,11 @@ export class Button extends LitElement {
             height: 100%;
             width: 100%;
             display: flex;
-            align-items: end;
+            align-items: flex-end;
             background: #666;
             border-radius: 12px;
-            padding: 20px;
-            font-size: 12px;
+            padding: 16px 20px;
+            font-size: 0.75rem;
             font-weight: 700;
             box-sizing: border-box;
         }
@@ -199,9 +199,8 @@ export class Triangle extends LitElement {
 export class TempoButton extends LitElement {
     static override styles = css`
         :host {
-            display: flex;
-            border-radius: inherit;
-            overflow: hidden;
+            display: block;
+            --tempo-button-border-radius: 0;
         }
         button {
             all: unset;
@@ -214,7 +213,9 @@ export class TempoButton extends LitElement {
             align-items: center;
             justify-content: center;
             box-sizing: border-box;
-            border-radius: inherit;
+            border-radius: var(--tempo-button-border-radius);
+            padding: 10px 0;
+            overflow: hidden;
         }
         button:active {
             background: #555;

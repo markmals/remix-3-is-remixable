@@ -77,8 +77,9 @@ export class Equalizer extends LitElement {
             background: black;
             border-radius: 12px;
             padding: 12px;
-            height: 230px;
+            height: 300px;
             gap: 4px;
+            box-sizing: border-box;
         }
     `;
 
@@ -340,8 +341,7 @@ export class TempoDisplay extends LitElement {
         }
         .container {
             display: flex;
-            flex-direction: row;
-            gap: clamp(6px, 1vw, 10px);
+            gap: 10px;
             align-items: stretch;
             height: 100%;
         }
@@ -351,32 +351,31 @@ export class TempoDisplay extends LitElement {
             flex: 1;
             background: #0b1b05;
             color: #64c146;
-            padding: clamp(20px, 3vw, 42px);
-            border-top-left-radius: clamp(12px, 2vw, 24px);
-            border-bottom-left-radius: clamp(12px, 2vw, 24px);
-            align-items: end;
+            padding: 18px;
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            align-items: flex-end;
+            justify-content: space-between;
             box-sizing: border-box;
         }
         .bpm-label {
-            font-size: clamp(16px, 2vw, 24px);
+            font-size: 0.8rem;
             font-weight: 700;
-            width: 33%;
+            letter-spacing: 0.08em;
         }
         .bpm-value {
             flex: 1;
-            font-size: clamp(48px, 7vw, 92px);
+            font-size: 2.6rem;
             font-weight: 700;
-            position: relative;
-            top: clamp(10px, 2vw, 22px);
             text-align: right;
             font-family: "JetBrains Mono", monospace;
+            line-height: 1;
         }
         .buttons {
-            width: clamp(40px, 6vw, 75px);
-            display: flex;
-            flex-direction: column;
-            gap: clamp(6px, 1vw, 12px);
-            justify-content: space-between;
+            width: 56px;
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
         }
         tempo-button {
             flex: 1;
@@ -429,14 +428,14 @@ export class TempoDisplay extends LitElement {
                 </div>
                 <div class="buttons">
                     <tempo-button
-                        style="border-top-right-radius: 24px; overflow: hidden;"
+                        style="--tempo-button-border-radius: 0 12px 0 0;"
                         orientation="up"
                         .events=${press(() => {
                             this.drummer.setTempo(this.bpm + 1);
                         })}
                     ></tempo-button>
                     <tempo-button
-                        style="border-bottom-right-radius: 24px; overflow: hidden;"
+                        style="--tempo-button-border-radius: 0 0 12px 0;"
                         orientation="down"
                         .events=${press(() => {
                             this.drummer.setTempo(this.bpm - 1);
